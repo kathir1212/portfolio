@@ -1,28 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Profileimg from './assets/kathirvel.jpeg';
 
 function Header() {
 
-let [toggle , settoggle] = useState()
-let opens = false
+let [toggle , settoggle] = useState(false)
+let opens = false;
     let open = () => {
-        opens = !opens;
-       settoggle(opens);
+     
+        
+        
+       settoggle(prevToggle => !prevToggle);
 
-       console.log(toggle,"toggle");
+       console.log();
        
         
     }
 
+    useEffect(() => {
+      
+    }, []);
+
+
+
   return (
 
+<>
 
-    
-
-<nav class="bg-white border-gray-200 dark:bg-gray-900">
+<div>
+<nav class="bg-white border-gray-200 dark:bg-gray-900 shadow-lg">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 ">
     <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <img src={Profileimg} class="h-[5rem]" alt="Flowbite Logo" />
+        <img src={Profileimg} class="rounded-[100%] shadow-lg h-[5rem]" alt="Flowbite Logo" />
         <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Kathirvel R</span>
     </a>
     <button onClick={()=>{
@@ -54,6 +62,42 @@ let opens = false
     </div>
   </div>
 </nav>
+
+
+
+</div>
+
+
+<div className="bg-gray-200 w-full h-screen flex justify-center items-center">
+  <div className="max-w-4xl w-full px-6 py-8 text-center">
+    <div>
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800">
+        I am Kathirvel R
+      </h1>
+    </div>
+
+    <div className="mt-6 mb-8 px-4 sm:px-8 md:px-16 lg:px-24 text-base sm:text-lg md:text-xl text-gray-700">
+      <span>
+        I’m a passionate Full-Stack Developer with experience in building dynamic and responsive web applications. From designing sleek front-end interfaces to developing robust back-end systems, I specialize in creating seamless user experiences.
+      </span>
+    </div>
+
+    <div>
+      <button
+        type="button"
+        className="text-xl sm:text-2xl md:text-3xl text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full px-6 py-3 transition duration-300 ease-in-out"
+      >
+       <h1 className=''>Projects</h1> 
+      </button>
+    </div>
+  </div>
+</div>
+
+
+</>
+    
+
+
 
   );
 }
