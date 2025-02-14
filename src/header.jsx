@@ -68,7 +68,7 @@ let opens = false;
 </div>
 
 
-<div className="bg-gray-200 w-full h-screen flex justify-center items-center">
+<div className="bg-gray-200 w-full      sm:h-[25rem] flex justify-center items-center">
   <div className="max-w-4xl w-full px-6 py-8 text-center">
     <div>
       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800">
